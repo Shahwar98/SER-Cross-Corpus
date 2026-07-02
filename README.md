@@ -99,7 +99,7 @@ Open notebooks/SER_Final.ipynb in Google Colab with A100 GPU.
 ## Project Structure
 
 - `notebooks/SER_Final.ipynb` — 3-way ablation study (main)
-- `notebooks/SER_V1.ipynb` — Initial experiments
+- `notebooks/SER_V1.ipynb` — WavLM + DPPMI + SimCLR experiment
 - `results/json/` — Training histories and accuracy metrics
 - `results/figures/` — Confusion matrices, F1 charts, architecture diagram
 

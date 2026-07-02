@@ -27,6 +27,9 @@ The core research question: *How can we learn emotion representations that gener
 
 ## Architecture
 
+![Architecture Diagram](results/figures/architecture.svg)
+
+
 RAVDESS (source, labeled) + TESS (target, labeled)
 ↓
 HuBERT-Large (facebook/hubert-large-ls960-ft)

@@ -128,5 +128,5 @@ Open notebooks/SER_Final.ipynb in Google Colab with A100 GPU.
 
 ## Author
 
-**Shahwar** — MS ECE, Purdue University Northwest (May 2026)
+**Shahwar** — MS ECE
 GitHub: [Shahwar98](https://github.com/Shahwar98)

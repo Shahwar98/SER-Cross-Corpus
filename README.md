@@ -47,9 +47,22 @@ Numbers are read from `results/json/hist_*.json` (single run, seed 42).
 - The same 20% TESS split is used for evaluation *and* for checkpoint selection, early stopping, the LR scheduler, and the Optuna search. The best-epoch numbers are therefore optimistic, and the final-epoch column is the more conservative figure.
 - With 1,120 test clips, one percentage point is about 11 clips. With a single seed, the gaps between rows (1.4 and 3.0 points) are suggestive, not conclusive.
 - An earlier version of this README reported 99.73% for the full model. That figure came from an evaluation in which test data had been exposed during training, and it has been removed.
-- `result_hubert_only.json` stores 56.61%, while the training history peaks at 59.91%; the table uses the history peak.
+- `result_hubert_only.json` stores 56.61%, which comes from an earlier smoothed-accuracy metric. The table uses the raw best-epoch accuracy from the training history (59.91%).
 
-Per-class results for the final run are not included yet.
+### Per-class results (full model, final-epoch model, 63.66% accuracy)
+
+| Emotion | Precision | Recall | F1 |
+|---------|-----------|--------|----|
+| Angry | 79.6% | 83.1% | 81.3% |
+| Disgust | 48.8% | 91.9% | 63.8% |
+| Fear | 91.9% | 78.1% | 84.5% |
+| Happy | 62.2% | 35.0% | 44.8% |
+| Neutral | 54.8% | 28.7% | 37.7% |
+| Sad | 58.7% | 55.0% | 56.8% |
+| Surprise | 61.5% | 73.8% | 67.0% |
+| **Macro avg** | 65.4% | 63.7% | 62.3% |
+
+Happy and neutral are the weakest classes, and many errors are predicted as disgust. See `results/figures/` for the confusion matrix, per-class F1 and precision/recall charts.
 
 ---
 
@@ -98,7 +111,7 @@ Open notebooks/SER_Final.ipynb in Google Colab with A100 GPU.
 - `notebooks/SER_Final.ipynb`: 3-way ablation study (main)
 - `notebooks/SER_V1.ipynb`: WavLM + DPPMI + SimCLR experiment
 - `results/json/`: Training histories and accuracy metrics
-- `results/figures/`: Figures. **Note:** `confusion_matrix.png`, `per_class_f1.png`, `training_curves.png` and `architecture.svg` come from an earlier run and do not match the results above; regenerate them from the final notebook before citing them.
+- `results/figures/`: Training curves, confusion matrix, per-class F1 and precision/recall charts for the final full-model run, per-run graph PDFs for the two baselines, and the architecture diagram
 
 ---
 

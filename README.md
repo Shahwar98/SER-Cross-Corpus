@@ -9,7 +9,7 @@
 
 ## Overview
 
-This project addresses **cross-corpus Speech Emotion Recognition (SER)** — training on one dataset (RAVDESS) and evaluating on a completely different one (TESS) across 7 shared emotion classes.
+This project addresses **cross-corpus Speech Emotion Recognition (SER)**: training on one dataset (RAVDESS) and evaluating on a completely different one (TESS) across 7 shared emotion classes.
 
 > **Setup (as implemented in `notebooks/SER_Final.ipynb`):** The classifier is trained on RAVDESS labels (cross-entropy + supervised contrastive loss on RAVDESS embeddings). TESS audio is passed through the model during training, but TESS labels do not enter any loss. TESS is split 80/20 (stratified, seed 42); the 20% split (1,120 clips) is the test set reported below.
 
@@ -17,11 +17,11 @@ This project addresses **cross-corpus Speech Emotion Recognition (SER)** — tra
 
 ## Novel Contributions
 
-1. **DPPMI Dropout for Speech** — Applies Saffari et al.'s DPPMI dropout to SER. It keeps the most informative and diverse neurons (DPP + mutual-information scoring), giving sparse representations.
+1. **DPPMI Dropout for Speech**: Applies Saffari et al.'s DPPMI dropout to SER. It keeps the most informative and diverse neurons (DPP + mutual-information scoring), giving sparse representations.
 
-2. **Supervised Contrastive Learning for cross-corpus SER** — A SupCon loss on RAVDESS embeddings is added to cross-entropy.
+2. **Supervised Contrastive Learning for cross-corpus SER**: A SupCon loss on RAVDESS embeddings is added to cross-entropy.
 
-3. **3-way ablation** — HuBERT only, HuBERT + DPPMI, and HuBERT + DPPMI + SupCon, trained with the same tuned hyperparameters.
+3. **3-way ablation**: HuBERT only, HuBERT + DPPMI, and HuBERT + DPPMI + SupCon, trained with the same tuned hyperparameters.
 
 ---
 
@@ -86,7 +86,7 @@ pip install torch transformers librosa scikit-learn optuna matplotlib seaborn pa
 ```
 
 Download datasets:
-- [RAVDESS](https://zenodo.org/record/1188976) — Audio_Speech_Actors_01-24.zip only
+- [RAVDESS](https://zenodo.org/record/1188976): Audio_Speech_Actors_01-24.zip only
 - [TESS](https://www.kaggle.com/datasets/ejlok1/toronto-emotional-speech-set-tess)
 
 Open notebooks/SER_Final.ipynb in Google Colab with A100 GPU.
@@ -95,10 +95,10 @@ Open notebooks/SER_Final.ipynb in Google Colab with A100 GPU.
 
 ## Project Structure
 
-- `notebooks/SER_Final.ipynb` — 3-way ablation study (main)
-- `notebooks/SER_V1.ipynb` — WavLM + DPPMI + SimCLR experiment
-- `results/json/` — Training histories and accuracy metrics
-- `results/figures/` — Figures. **Note:** `confusion_matrix.png`, `per_class_f1.png`, `training_curves.png` and `architecture.svg` come from an earlier run and do not match the results above; regenerate them from the final notebook before citing them.
+- `notebooks/SER_Final.ipynb`: 3-way ablation study (main)
+- `notebooks/SER_V1.ipynb`: WavLM + DPPMI + SimCLR experiment
+- `results/json/`: Training histories and accuracy metrics
+- `results/figures/`: Figures. **Note:** `confusion_matrix.png`, `per_class_f1.png`, `training_curves.png` and `architecture.svg` come from an earlier run and do not match the results above; regenerate them from the final notebook before citing them.
 
 ---
 
@@ -126,5 +126,5 @@ Open notebooks/SER_Final.ipynb in Google Colab with A100 GPU.
 
 ## Author
 
-**Shahwar** — MS ECE
+**Shahwar**, MS ECE
 GitHub: [Shahwar98](https://github.com/Shahwar98)
